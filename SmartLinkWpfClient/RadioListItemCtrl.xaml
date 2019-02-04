@@ -1,0 +1,309 @@
+﻿<UserControl
+	x:Class="SmartLinkWfpClient.RadioListItemCtrl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:util="clr-namespace:Flex.UiWpfFramework.Utils;assembly=Flex.UiWpfFramework"
+    >
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <BooleanToVisibilityConverter
+				x:Key="BoolToVisConverter" />
+            <util:BooleanToVisibilityMultiConverter
+				x:Key="BooleanToVisibilityMultiConverter" />
+            <Style
+				TargetType="{x:Type TextBlock}"
+				x:Key="{x:Type TextBlock}">
+                <Setter
+					Property="FontSize"
+					Value="14" />
+            </Style>
+            <Style
+				TargetType="{x:Type Ellipse}"
+				x:Key="EllipseStyle">
+                <Setter
+					Property="Fill">
+                    <Setter.Value>
+                        <RadialGradientBrush
+							Center="0.476,0.312"
+							GradientOrigin="0.476,0.312"
+							RadiusX="0.636">
+                            <GradientStop
+								Color="White" />
+                            <GradientStop
+								Color="#FF0033FF"
+								Offset="1" />
+                            <GradientStop
+								Color="#FFAEAFE0"
+								Offset="0.293" />
+                        </RadialGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <DataTrigger
+						Value="Available"
+						Binding="{Binding ConnectedStateStr}">
+                        <Setter
+							Property="Fill">
+                            <Setter.Value>
+                                <RadialGradientBrush
+									Center="0.476,0.312"
+									GradientOrigin="0.476,0.312"
+									RadiusX="0.636">
+                                    <GradientStop
+										Color="White" />
+                                    <GradientStop
+										Color="#FF0033FF"
+										Offset="1" />
+                                    <GradientStop
+										Color="#FFAEAFE0"
+										Offset="0.293" />
+                                </RadialGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                    <DataTrigger
+						Value="Connected"
+						Binding="{Binding ConnectedStateStr}">
+                        <Setter
+							Property="Fill">
+                            <Setter.Value>
+                                <RadialGradientBrush
+									Center="0.476,0.312"
+									GradientOrigin="0.476,0.312"
+									RadiusX="0.636">
+                                    <GradientStop
+										Color="White" />
+                                    <GradientStop
+										Color="#FF009F02"
+										Offset="1" />
+                                    <GradientStop
+										Color="#FFAEE0AF"
+										Offset="0.293" />
+                                </RadialGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                    <DataTrigger
+						Value="Update"
+						Binding="{Binding ConnectedStateStr}">
+                        <Setter
+							Property="Fill">
+                            <Setter.Value>
+                                <RadialGradientBrush
+									Center="0.476,0.312"
+									GradientOrigin="0.476,0.312"
+									RadiusX="0.636">
+                                    <GradientStop
+										Color="White" />
+                                    <GradientStop
+										Color="#FF999900"
+										Offset="1" />
+                                    <GradientStop
+										Color="#FFF7F747"
+										Offset="0.293" />
+                                </RadialGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                    <DataTrigger
+						Value="In Use"
+						Binding="{Binding ConnectedState}">
+                        <Setter
+							Property="Fill">
+                            <Setter.Value>
+                                <RadialGradientBrush
+									Center="0.476,0.312"
+									GradientOrigin="0.476,0.312"
+									RadiusX="0.636">
+                                    <GradientStop
+										Color="Red" />
+                                    <GradientStop
+										Color="#FF9A0000"
+										Offset="1" />
+                                    <GradientStop
+										Color="#FFDC2828"
+										Offset="0.293" />
+                                </RadialGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                    <DataTrigger
+						Value="License Required"
+						Binding="{Binding ConnectedStateStr}">
+                        <Setter
+							Property="Fill">
+                            <Setter.Value>
+                                <RadialGradientBrush
+									Center="0.476,0.312"
+									GradientOrigin="0.476,0.312"
+									RadiusX="0.636">
+                                    <GradientStop
+										Color="Red" />
+                                    <GradientStop
+										Color="#FF9A0000"
+										Offset="1" />
+                                    <GradientStop
+										Color="#FFDC2828"
+										Offset="0.293" />
+                                </RadialGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Border
+		BorderBrush="#FFD3D3D3"
+		BorderThickness="0 0 0 1">
+        <FrameworkElement.ToolTip>
+            <StackPanel>
+                <TextBlock>
+                    <TextBlock.Text>
+                        <MultiBinding
+							StringFormat="Radio Serial: {0}">
+                            <Binding
+								Path="Radio.Serial" />
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock>
+                    <TextBlock.Text>
+                        <MultiBinding
+							StringFormat="Max Licensed Version: {0}">
+                            <Binding
+								Path="Radio.MaxLicensedVersion" />
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock>
+                    <TextBlock.Text>
+                        <MultiBinding
+							StringFormat="Radio ID: {0}">
+                            <Binding
+								Path="Radio.RadioLicenseId" />
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock>
+                    <TextBlock.Text>
+                        <MultiBinding
+							StringFormat="Radio IP: {0}">
+                            <Binding
+								Path="IPStr" />
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock>
+					<UIElement.Visibility>
+						<MultiBinding
+							Converter="{StaticResource BooleanToVisibilityMultiConverter}">
+							<Binding
+								Path="Radio.IsWan" />
+							<Binding
+								Path="Radio.HolePunchNotRequired" />
+						</MultiBinding>
+					</UIElement.Visibility>
+                    <TextBlock.Text>
+                        <MultiBinding
+							StringFormat="SmartLink TCP Port: {0},  UDP Port: {1}">
+                            <Binding
+								Path="PublicTlsPort" />
+                            <Binding
+								Path="PublicUdpPort" />
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock
+					Visibility="{Binding InUseByOtherClient, Converter={StaticResource BoolToVisConverter}}">
+                    <TextBlock.Text>
+                        <MultiBinding
+							StringFormat="In Use By: {0} ({1})">
+                            <Binding
+								Path="InUseHost" />
+                            <Binding
+								Path="InUseIP" />
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+                <TextBlock>
+                    <TextBlock.Text>
+                        <MultiBinding
+							StringFormat="Radio Firmware: {0}">
+                            <Binding
+								Path="VersionStr" />
+                        </MultiBinding>
+                    </TextBlock.Text>
+                </TextBlock>
+            </StackPanel>
+        </FrameworkElement.ToolTip>
+        <StackPanel Orientation="Horizontal" Margin="4">
+            <Grid
+				Width="84.154"
+				Height="51.92"
+				HorizontalAlignment="Left"
+				Margin="4,0,0,0">
+                <Image
+					Margin="0,0,0,-1.128"
+					Stretch="Uniform"
+					RenderOptions.BitmapScalingMode="HighQuality"
+					Source="{Binding ImageSource}" />
+            </Grid>
+            <StackPanel
+				VerticalAlignment="Center"
+				Margin="8,0,8,0"
+				Width="360">
+                <DockPanel
+					HorizontalAlignment="Left"
+					Margin="0,4,0,0">
+                    <Border
+						Margin="0,0,8,0"
+						HorizontalAlignment="Right"
+						BorderThickness="1"
+						BorderBrush="#0070FF"
+						CornerRadius="3"
+						Width="75"
+						Background="#0070FF"
+						Visibility="{Binding Radio.IsWan, Converter={StaticResource BoolToVisConverter}, FallbackValue=Visible}">
+                        <TextBlock
+							Text="SmartLink"
+							TextWrapping="Wrap"
+							Width="75"
+							TextAlignment="Center"
+							VerticalAlignment="Center"
+							Foreground="#FFFFFFFF"
+							Margin="-1,0" />
+                    </Border>
+                    <TextBlock
+						Text="{Binding Radio.Model, FallbackValue=[Model], Mode=OneWay}" />
+                </DockPanel>
+                <DockPanel
+					Margin="0,4,0,0">
+                    <TextBlock
+						Margin="0,0,0,0"
+						Text="{Binding DisplayName, FallbackValue='[Display Name]', Mode=OneWay}" />
+                    <TextBlock
+						Margin="12,0,0,0"
+						Text="{Binding Radio.Callsign, FallbackValue=[Callsign], Mode=OneWay}" />
+                </DockPanel>
+                <DockPanel
+					Margin="0,4,0,0">
+                    <Ellipse
+						StrokeThickness="0.5"
+						Height="12"
+						Width="12"
+						Stroke="#FF000000"
+						VerticalAlignment="Center"
+						Style="{StaticResource EllipseStyle}" />
+                    <TextBlock
+						Margin="4,0,0,0"
+						VerticalAlignment="Center"
+						HorizontalAlignment="Left"
+						TextWrapping="Wrap"
+						Width="239"
+						Text="{Binding ConnectedStateStr, FallbackValue=[State]}" />
+                </DockPanel>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</UserControl>

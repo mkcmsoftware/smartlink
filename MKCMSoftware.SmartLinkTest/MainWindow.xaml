@@ -1,0 +1,33 @@
+﻿<Window x:Class="MKCMSoftware.SmartLinkTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MKCMSoftware.SmartLinkTest"
+        mc:Ignorable="d"
+        Title="SmartLink Test" Height="450" Width="800"
+        Loaded="Window_Loaded" Closing="Window_Closing" Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="34" />
+            <RowDefinition Height="34" />
+            <RowDefinition Height="34" />
+            <RowDefinition Height="34" />
+            <RowDefinition Height="34" />
+            <RowDefinition Height="34" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="1" Orientation="Horizontal">
+            <Button Name="bntConnect" Content="Connect" Width="100" Margin="0,0,8,0" Click="BntConnect_Click" />
+            <Button Name="btnDisconnect"  Content="Disconnect" Width="100" Click="BtnDisconnect_Click" />
+        </StackPanel>
+        <Label Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Status" />
+        <TextBlock Name="StatusText" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Text="Unknown" />
+        <Label Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Slice Count" />
+        <TextBlock Name="SliceCount" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="" />
+    </Grid>
+</Window>

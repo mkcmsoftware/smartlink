@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/MKCMSoftware.SmartLinkTest/obj
+/MKCMSoftware.SmartLinkTest/bin
+/SmartLinkWpfClient/obj
+/SmartLinkWpfClient/bin
+/packages
