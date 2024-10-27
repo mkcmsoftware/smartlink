@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLinkWpfClient", "SmartLinkWpfClient\SmartLinkWpfClient.csproj", "{4A8B28DA-646A-4D75-A33B-95232A2994BD}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -20,14 +20,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKCMSoftware.SmartLinkTest"
 		{6ED364FB-7444-44DA-9196-1D8679425B3E} = {6ED364FB-7444-44DA-9196-1D8679425B3E}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexLib", "..\FlexLib_API\v2_4_9\FlexLib\FlexLib.csproj", "{7927817C-D5EF-4A9E-B38E-29668F308343}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiWpfFramework", "..\FlexLib_API\v2_4_9\UiWpfFramework\UiWpfFramework.csproj", "{9C0AD871-92FD-461B-84FF-3738D701814F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "..\FlexLib_API\v2_4_9\Util\Util.csproj", "{38935DC9-FF48-470C-B876-473A3AE8BD32}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vita", "..\FlexLib_API\v2_4_9\Vita\Vita.csproj", "{6ED364FB-7444-44DA-9196-1D8679425B3E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Info", "Info", "{CA72F59C-CF23-4C94-BB8A-CA046ACE309C}"
 	ProjectSection(SolutionItems) = preProject
 		jose-jwt-LICENSE = jose-jwt-LICENSE
@@ -35,6 +27,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Info", "Info", "{CA72F59C-C
 		newtonsoft-json-LICENSE = newtonsoft-json-LICENSE
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlexLib", "FlexLib_API_v2.10.1.22964\FlexLib\FlexLib.csproj", "{7927817C-D5EF-4A9E-B38E-29668F308343}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UiWpfFramework", "FlexLib_API_v2.10.1.22964\UiWpfFramework\UiWpfFramework.csproj", "{9C0AD871-92FD-461B-84FF-3738D701814F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Util", "FlexLib_API_v2.10.1.22964\Util\Util.csproj", "{38935DC9-FF48-470C-B876-473A3AE8BD32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vita", "FlexLib_API_v2.10.1.22964\Vita\Vita.csproj", "{6ED364FB-7444-44DA-9196-1D8679425B3E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

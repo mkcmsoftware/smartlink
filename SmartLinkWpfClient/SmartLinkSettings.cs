@@ -36,7 +36,7 @@ namespace SmartLinkWfpClient
 		{
             string domain = "frtest.auth0.com";
             string clientId = "4Y9fEIIsVYyQo5u6jr7yBWc4lV5ugC2m";
-            Auth0LVM = new Auth0Model(new Auth0Client(domain, clientId, 900, 630, false));
+            Auth0LVM = new Auth0Model(new Auth0Client(domain, clientId, false, false));
             this._auth0LVM.PropertyChanged += this._auth0LVM_PropertyChanged;
 
 			this._wanServer = wanServer;

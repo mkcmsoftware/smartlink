@@ -63,7 +63,7 @@ namespace MKCMSoftware.SmartLinkTest
             string propertyName = e.PropertyName;
             if (propertyName == "RadioVD")
             {
-                Util.InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
+                InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
                 {
                     if (smartLinkWan.RadioVD.Radio != null && smartLinkWan.RadioVD.ShouldConnect)
                     {
@@ -118,7 +118,7 @@ namespace MKCMSoftware.SmartLinkTest
 
         private void fradio_SliceRemoved(Slice slc)
         {
-            Util.InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
+            InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
             {
 
                 SliceCount.Text = fradio.SliceList.Count.ToString();
@@ -127,7 +127,7 @@ namespace MKCMSoftware.SmartLinkTest
 
         private void fradio_SliceAdded(Slice slc)
         {
-            Util.InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
+            InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
             {
 
                 SliceCount.Text = fradio.SliceList.Count.ToString();
@@ -136,7 +136,7 @@ namespace MKCMSoftware.SmartLinkTest
 
         private void fradio_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            Util.InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
+            InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
             {
                 try
                 {
