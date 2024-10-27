@@ -16,6 +16,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Input;
 using Flex.UiWpfFramework.Mvvm;
+using Flex.Util;
 
 namespace SmartLinkWfpClient
 {

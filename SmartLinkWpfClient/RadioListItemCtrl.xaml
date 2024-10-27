@@ -2,8 +2,7 @@
 	x:Class="SmartLinkWfpClient.RadioListItemCtrl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:util="clr-namespace:Flex.UiWpfFramework.Utils;assembly=Flex.UiWpfFramework"
-    >
+    xmlns:util="clr-namespace:Flex.UiWpfFramework.Utils;assembly=Flex.UiWpfFramework">
     <FrameworkElement.Resources>
         <ResourceDictionary>
             <BooleanToVisibilityConverter
@@ -201,7 +200,7 @@
 							<Binding
 								Path="Radio.IsWan" />
 							<Binding
-								Path="Radio.HolePunchNotRequired" />
+								Path="HolePunchNotRequired" />
 						</MultiBinding>
 					</UIElement.Visibility>
                     <TextBlock.Text>

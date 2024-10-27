@@ -11,9 +11,9 @@
 // ****************************************************************************
 using System;
 using System.ComponentModel;
-using Auth0.Windows;
 using Flex.Smoothlake.FlexLib;
 using Flex.UiWpfFramework.Mvvm;
+using Flex.Util;
 
 namespace SmartLinkWfpClient
 {

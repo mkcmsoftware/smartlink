@@ -47,6 +47,7 @@ namespace SmartLinkWfpClient
                     _radio = value;
                     if (value != null)
                     {
+                        HolePunchNotRequired = _radio.RequiresHolePunch ? false : true;
                         _radio.PropertyChanged += _radio_PropertyChanged;
                         UpdateDisplayName();
                         SetImageForModel();
@@ -87,6 +88,14 @@ namespace SmartLinkWfpClient
             else if (e.PropertyName == "PublicUdpPort")
             {
                 this.PublicUdpPort = this._radio.PublicUdpPort;
+            }
+            else if (e.PropertyName == "Serial")
+            {
+                this.Serial = this._radio.Serial;
+            }
+            else if (e.PropertyName == "RequiresHolePunch")
+            {
+                this.HolePunchNotRequired = this._radio.RequiresHolePunch ? false : true;
             }
             UpdateConnectInfo();
         }
@@ -421,6 +430,41 @@ namespace SmartLinkWfpClient
                 }
             }
         }
+        private string _serial;
+        public string Serial
+        {
+            get
+            {
+                return this._serial;
+            }
+            set
+            {
+                if (this._serial != value)
+                {
+                    this._serial = value;
+                    base.RaisePropertyChanged("Serial");
+                }
+            }
+        }
+        private bool _hpnr;
+        public bool HolePunchNotRequired
+        {
+            get
+            {
+                return this._hpnr;
+            }
+            set
+            {
+                if (this._hpnr != value)
+                {
+                    this._hpnr = value;
+                    base.RaisePropertyChanged("HolePunchNotRequired");
+                }
+            }
+        }
+
+        
+
         private void SetImageForModel()
         {
             string model = _radio.Model;

@@ -3,6 +3,8 @@ using System.ComponentModel;
 using System.Windows;
 using Flex.Smoothlake.FlexLib;
 using SmartLinkWfpClient;
+using Flex.Util;
+using Flex.UiWpfFramework;
 
 
 namespace MKCMSoftware.SmartLinkTest
@@ -27,6 +29,7 @@ namespace MKCMSoftware.SmartLinkTest
             smartLinkWan = new SmartLinkWan();
             smartLinkWan.PropertyChanged += SmartLinkWan_PropertyChanged;
             smartLinkWan.InitWan();
+            smartLinkWan.RadioList.AlwaysShowWanRadios = true;
 
         }
 
@@ -56,6 +59,8 @@ namespace MKCMSoftware.SmartLinkTest
                 return;
 
             derefRadio();
+
+            
         }
 
         private void SmartLinkWan_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -63,7 +68,7 @@ namespace MKCMSoftware.SmartLinkTest
             string propertyName = e.PropertyName;
             if (propertyName == "RadioVD")
             {
-                Util.InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
+                InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
                 {
                     if (smartLinkWan.RadioVD.Radio != null && smartLinkWan.RadioVD.ShouldConnect)
                     {
@@ -113,12 +118,14 @@ namespace MKCMSoftware.SmartLinkTest
                 fradio = rr;
 
                 SliceCount.Text = fradio.SliceList.Count.ToString();
+                IsWAN.Text = fradio.IsWan ? "True" : "False";
+                Nickname.Text = fradio.Nickname;
             }
         }
 
         private void fradio_SliceRemoved(Slice slc)
         {
-            Util.InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
+            InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
             {
 
                 SliceCount.Text = fradio.SliceList.Count.ToString();
@@ -127,7 +134,7 @@ namespace MKCMSoftware.SmartLinkTest
 
         private void fradio_SliceAdded(Slice slc)
         {
-            Util.InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
+            InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
             {
 
                 SliceCount.Text = fradio.SliceList.Count.ToString();
@@ -136,7 +143,7 @@ namespace MKCMSoftware.SmartLinkTest
 
         private void fradio_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            Util.InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
+            InvokeHelper.BeginInvokeIfNeeded(base.Dispatcher, delegate
             {
                 try
                 {
@@ -183,8 +190,10 @@ namespace MKCMSoftware.SmartLinkTest
             }
 
             this.Title = "Disconnected";
+            SliceCount.Text = string.Empty;
             StatusText.Text = "";
-
+            IsWAN.Text = "";
+            Nickname.Text = "";
         }
 
         private bool isclosingnow = false;

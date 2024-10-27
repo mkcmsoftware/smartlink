@@ -8,15 +8,16 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MKCMSoftware.SmartLinkTest</RootNamespace>
     <AssemblyName>MKCMSoftware.SmartLinkTest</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -95,24 +96,24 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\FlexLib_API\v2_4_9\FlexLib\FlexLib.csproj">
-      <Project>{7927817c-d5ef-4a9e-b38e-29668f308343}</Project>
-      <Name>FlexLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FlexLib_API\v2_4_9\UiWpfFramework\UiWpfFramework.csproj">
-      <Project>{9c0ad871-92fd-461b-84ff-3738d701814f}</Project>
-      <Name>UiWpfFramework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\FlexLib_API\v2_4_9\Util\Util.csproj">
-      <Project>{38935dc9-ff48-470c-b876-473a3ae8bd32}</Project>
+    <ProjectReference Include="..\..\..\FlexRadio\FlexLib_API_v3.8.19.34216\Util\Util.csproj">
+      <Project>{ca2f63c2-4c7e-4a5b-92e6-0f790ad64c33}</Project>
       <Name>Util</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\FlexLib_API\v2_4_9\Vita\Vita.csproj">
-      <Project>{6ed364fb-7444-44da-9196-1d8679425b3e}</Project>
+    <ProjectReference Include="..\..\..\FlexRadio\FlexLib_API_v3.8.19.34216\Vita\Vita.csproj">
+      <Project>{162406a5-79ab-4106-a9fd-dbf0a5ded359}</Project>
       <Name>Vita</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FlexLib_API_v3.8.19.34216\FlexLib\FlexLib.csproj">
+      <Project>{dce517aa-999f-478c-add8-594a3d71db4e}</Project>
+      <Name>FlexLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FlexLib_API_v3.8.19.34216\UiWpfFramework\UiWpfFramework.csproj">
+      <Project>{d8869e51-0124-4e40-a15d-0266d4cd5959}</Project>
+      <Name>UiWpfFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartLinkWpfClient\SmartLinkWpfClient.csproj">
-      <Project>{4A8B28DA-646A-4D75-A33B-95232A2994BD}</Project>
+      <Project>{4a8b28da-646a-4d75-a33b-95232a2994bd}</Project>
       <Name>SmartLinkWpfClient</Name>
     </ProjectReference>
   </ItemGroup>

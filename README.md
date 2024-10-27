@@ -1,30 +1,60 @@
-# smartlink_v2
+# smartlink v3 (master)
 
-Sample FlexRadio SmartLink V2 WPF client
+Branch **master** is Sample FlexRadio SmartLink V3 WPF client
 
 This sample will show how to connect to a Flex Signature Series radio via SmartLink. 
 
 
 
 This project leverages 
-- FlexAPI - Copyright 2012-2017 FlexRadio Systems
-- jose-jwt - Copyright (c) 2014-2015 dvsekhvalnov
+- FlexAPI FlexLib_API_v3.8.19.34216 - Copyright 2012-2024 FlexRadio Systems
+- jose-jwt - Copyright (c) 2014-2024 dvsekhvalnov
 - Newtonsoft.JSON -  Copyright (c) 2007 James Newton-King
-- .NET 4.61 - Microsoft
+- .NET Framework - Microsoft
 
 
 ### Build installation steps
 
-1. Clone this repository to a folder called smartlink_v2
-2. Create a folder at same level called FlexLib_API
-3. Copy the 'Auth0.Windows.dll' file from the SmartSDR V2.4 to the FlexLib_API folder.
-4. Create the folder 'v2_4_9' in the FlexLib_API folder then expand the FlexLib_API_v2.4.9.ZIP file to that folder.
-5. Use VisualStudio 2017 to open 'MKCMSoftware.SmartLink.sln'; Note VS will need to download the referenced NuGet packages.
+1. Clone **master** repository to a folder called smartlink
+2. Create a folder at same level called FlexLib_API_v3.8.19.34216 by unziping FlexLib to smartlink folder
+3. Build referencs 'Auth0.Windows.dll' file from the SmartSDR v2.12.1 installation folder. If you are using SmartSDR V3 then install SmartSDR V2.12.1 without DAX and CAT.
+4. Use VisualStudio 2022 to open 'MKCMSoftware.SmartLink.sln'; Note VS will need to download the referenced NuGet packages.
 
 ```
-.../smartlink_v2/<smartlink_v2 repository here!>
-.../FlexLib_API/Auth0.Windows.dll
-.../FlexLib_API/v2_4_9/<flex api sdk here!>
+.../smartlink/<smartlink repository here!>
+.../smartlink/FlexLib_API_v3.8.19.34216
+C:\Program Files\FlexRadio Systems\SmartSDR v2.12.1\Auth0.Windows.dll
+```
+
+
+
+
+# smartlink v2
+
+Branch  is Sample FlexRadio SmartLink V2 WPF client
+
+This sample will show how to connect to a Flex Signature Series radio via SmartLink. 
+
+
+
+This project leverages 
+- FlexAPI FlexLib_API_v3.8.19.34216 - Copyright 2012-2024 FlexRadio Systems
+- jose-jwt - Copyright (c) 2014-2024 dvsekhvalnov
+- Newtonsoft.JSON -  Copyright (c) 2007 James Newton-King
+- .NET Framework - Microsoft
+
+
+### Build installation steps
+
+1. Clone **V2** branch this repository to a folder called smartlink
+2. Create a folder at same level called FlexLib_API_v2.10.1.22964 by unziping FlexLib to smartlink folder
+3. Build referencs 'Auth0.Windows.dll' file from the SmartSDR v2.12.1 installation folder. If you are using SmartSDR V3 then install SmartSDR V2.12.1 without DAX and CAT.
+4. Use VisualStudio 2022 to open 'MKCMSoftware.SmartLink.sln'; Note VS will need to download the referenced NuGet packages.
+
+```
+.../smartlink/<smartlink repository here!>
+.../smartlink/FlexLib_API_v2.10.1.22964
+C:\Program Files\FlexRadio Systems\SmartSDR v2.12.1\Auth0.Windows.dll
 ```
 
 

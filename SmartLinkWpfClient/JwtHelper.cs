@@ -141,14 +141,21 @@ namespace SmartLinkWfpClient
 
 		private string GetPayloadItemFromJwt(string jwt, string itemName)
 		{
-			try
+			if (!string.IsNullOrEmpty(jwt))
 			{
-				return JWT.Payload<IDictionary<string, object>>(jwt)[itemName].ToString();
+				try
+				{
+					var d = JWT.Payload<IDictionary<string, object>>(jwt);
+					if (d.ContainsKey(itemName))
+					{
+						return d[itemName].ToString();
+					}
+				}
+				catch (Exception)
+				{
+				}
 			}
-			catch (Exception)
-			{
-			}
-			return "";
+			return string.Empty;
 		}
 
 		private string _clientSecret;

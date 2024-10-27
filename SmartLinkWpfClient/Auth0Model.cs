@@ -182,8 +182,7 @@ namespace SmartLinkWfpClient
 		{
 			Window window = new Window();
 			string loginResult = "";
-            //string scope = requestRefreshToken ? "openid offline_access email given_name family_name" : "openid email given_name family_name";
-            string scope = requestRefreshToken ? "openid offline_access email given_name family_name picture" : "openid email given_name family_name picture";
+            string scope = requestRefreshToken ? "openid offline_access profile" : "openid profile";
 			string device = "myDevice";
 			this._auth0Cli.LoginAsync(new WindowWrapper(new WindowInteropHelper(window).Handle), "", scope, device).ContinueWith(delegate(Task<Auth0User> t)
 			{
@@ -259,8 +258,8 @@ namespace SmartLinkWfpClient
 			{
 				{
 					"scope",
-					"openid email given_name family_name picture"
-				},
+                    "openid profile"
+                },
 				{
 					"refresh_token",
 					refreshToken

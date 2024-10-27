@@ -13,12 +13,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using Flex.Smoothlake.FlexLib;
+using Flex.UiWpfFramework;
 using Flex.UiWpfFramework.Mvvm;
-using Util;
+using Flex.Util;
 
 namespace SmartLinkWfpClient
 {
-    public class FlexRadioList : ObservableObject
+	public class FlexRadioList : ObservableObject
 	{
 		public FlexRadioList()
 		{
@@ -27,13 +28,15 @@ namespace SmartLinkWfpClient
 			this._LocalRadios = new List<RadioViewData>();
 			API.RadioAdded += this.API_RadioAdded;
 			API.RadioRemoved += this.API_RadioRemoved;
-		    API.WanListReceived += this.API_WanListReceived;
-	
+			API.WanListReceived += this.API_WanListReceived;
+
 			foreach (Radio radio in API.RadioList.ToList<Radio>())
 			{
 				this.API_RadioAdded(radio);
 			}
 		}
+
+		public bool AlwaysShowWanRadios { get; set; }
 
 		private void API_WanListReceived(List<Radio> radioListFromServer)
 		{
@@ -91,7 +94,7 @@ namespace SmartLinkWfpClient
                     RadioViewData wanRvm = enumerator.Current;
 					bool notfound1 = this._LocalRadios.FirstOrDefault((RadioViewData lanRvm) => lanRvm.Radio.Serial == wanRvm.Radio.Serial) == null;
 					bool notfound2 = this._RadiosFound.FirstOrDefault((RadioViewData rvm) => rvm.Radio.Serial == wanRvm.Radio.Serial) == null;
-					if (notfound1 && notfound2)
+					if (AlwaysShowWanRadios || (notfound1 && notfound2))
 					{
 						this._RadiosFound.Add(wanRvm);
 					}

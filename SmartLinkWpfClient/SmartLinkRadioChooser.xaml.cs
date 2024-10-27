@@ -21,6 +21,7 @@ using System.Windows.Markup;
 using Flex.Smoothlake.FlexLib;
 using Flex.UiWpfFramework.Mvvm;
 using Flex.UiWpfFramework.Utils;
+using Flex.Util;
 
 namespace SmartLinkWfpClient
 {
